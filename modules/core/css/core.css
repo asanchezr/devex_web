@@ -1,0 +1,75 @@
+.content {
+	margin-top: 50px;
+}
+.col-centered {
+	float: none;
+	margin: 0 auto;
+}
+
+
+.undecorated-link:hover {
+	text-decoration: none;
+}
+[ng\:cloak],
+[ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+	display: none !important;
+}
+
+.user-primary-account {
+	font-size: 30px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+.error-text {
+	display: none;
+}
+.has-error .help-block.error-text {
+	display: block;
+}
+.has-error .help-inline.error-text {
+	display: inline;
+}
+
+
+.vcenter {
+	display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+.custombuttonbackground {
+	background-color: #555;
+	border-color: #555;
+	color: #fff;
+}
+.cbg-light-steel-blue {
+	background-color: #b0c4de;
+}
+.cbg-light-blue {
+	background-color: #add8e6;
+}
+.cbg-powder-blue {
+	background-color: #b0e0e6;
+}
+.cbg-light-grey-blue {
+	background-color: #EBF5FB;
+}
+.ctc-green {
+	color: green;
+}
+.modal-backdrop {
+	color: #FFFFFF;
+	opacity: 0.5 !important;
+}
+.message-view-container {
+	width: 50%;
+	margin: 2em auto;
+}
+.collapsing {
+	-webkit-transition: none;
+	transition: none;
+	display: none;
+}

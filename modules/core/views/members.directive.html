@@ -1,0 +1,32 @@
+<div class="row list-head">
+<div class="col-sm-7">
+	<h3 ng-bind="vm.title" class="list-page-hide"></h3>
+</div>
+<div class="col-sm-5 col-form-buttons text-right">
+</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6" ng-if="! vm.members.length">
+		<div class="panel panel-default panel-body">
+			<span class="text-muted">No members found.</span>
+		</div>
+	</div>
+	<div class="col-sm-4" ng-repeat="column in vm.columns">
+		
+		<!-- NEW card format -->
+		<div class="card-user-transparent" ng-repeat="member in vm.members | slice:column.start:column.end">
+			<img class="card-img-left" src="{{((member.profileImageURL.substr(0,1) == '/' || member.profileImageURL.substr(0,4) == 'http') ? '' : '/') + member.profileImageURL}}"/>
+			<div class="card-body">
+				<!-- // Admin can remove any member // -->
+				<a href="javascript:void(0);" class="btn btn-remove btn-text-only pull-right" ng-if="vm.isAdmin || vm.model.userIs.admin" ng-click="vm.delete(member._id, member.username, 'admin')" title="Remove"><i class="fa fa-lg fa-times"></i></a>
+				<!-- // User can remove themself // -->
+				<a href="javascript:void(0);" class="btn btn-remove btn-text-only pull-right" ng-if="vm.isUser && member.username == vm.userid" ng-click="vm.delete(member._id, member.username, 'member')" title="Remove Me"><i class="fa fa-lg fa-times"></i></a>
+				<div class="card-title">
+					{{member.firstName}} {{member.lastName}}
+					<span ng-if="member.email && member.isDisplayEmail"><br><a class="small" href="mailto:{{member.email}}"><i class="fa fa-envelope"></i> Email</a></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

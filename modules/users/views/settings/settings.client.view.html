@@ -1,0 +1,25 @@
+<section class="edit-form-background">
+
+	<div class="edit-form" role="main">
+		<div class="edit-form-header">
+			My Profile
+		</div>
+		<div class="edit-form-body">
+			<uib-tabset active>
+				<li ui-sref-active="active">
+					<a  id="settings.profile" ui-sref="settings.profile">About Me</a>
+				</li>
+				<li ui-sref-active="active">
+					<a  id="settings.privacy" ui-sref="settings.privacy">Notifications & Privacy</a>
+				</li>
+				<li ui-sref-active="active">
+					<a  id="settings.skills" ui-sref="settings.skills">My Capabilities & Skills</a>
+				</li>
+				<li ui-sref-active="active">
+					<a  id="settings.messages" ui-sref="settings.messages">Messages</a>
+				</li>
+			</uib-tabset>
+		</div>
+		<div ui-view></div>
+	</div>
+</section>
