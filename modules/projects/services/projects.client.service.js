@@ -9,7 +9,7 @@
   ProjectsService.$inject = ['$resource', '$log'];
 
   function ProjectsService($resource, $log) {
-    var Project = $resource('/api/projects/:projectId', {
+    var Project = $resource(window.apiUrl + '/api/projects/:projectId', {
       projectId: '@_id'
     }, {
       update: {
@@ -17,40 +17,40 @@
       },
       forProgram: {
         method: 'GET',
-        url: '/api/projects/for/program/:programId',
+        url: window.apiUrl + '/api/projects/for/program/:programId',
         isArray: true
       },
       makeRequest: {
         method: 'GET',
-        url :'/api/request/project/:projectId'
+        url : window.apiUrl + '/api/request/project/:projectId'
       },
       my: {
         method: 'GET',
-        url: '/api/my/projects',
+        url: window.apiUrl + '/api/my/projects',
         isArray: true
       },
       myadmin: {
         method: 'GET',
-        url: '/api/myadmin/projects',
+        url: window.apiUrl + '/api/myadmin/projects',
         isArray: true
       },
       getRequests: {
         method: 'GET',
-        url :'/api/projects/requests/:projectId',
+        url : window.apiUrl + '/api/projects/requests/:projectId',
         isArray: true
       },
       getMembers: {
         method: 'GET',
-        url :'/api/projects/members/:projectId',
+        url : window.apiUrl + '/api/projects/members/:projectId',
         isArray: true
       },
       confirmMember: {
         method: 'GET',
-        url : '/api/projects/requests/confirm/:projectId/:userId'
+        url : window.apiUrl + '/api/projects/requests/confirm/:projectId/:userId'
       },
       denyMember: {
         method: 'GET',
-        url : '/api/projects/requests/deny/:projectId/:userId'
+        url : window.apiUrl + '/api/projects/requests/deny/:projectId/:userId'
       }
     });
 

@@ -25,6 +25,7 @@
 		function ($window, $sce, program, Authentication, ProgramsService, Notification) {
 			var vm                 = this;
 			vm.program             = program;
+			vm.program.logo		   = window.apiUrl + '/' + vm.program.logo;
 			vm.display             = {};
 			vm.display.description = $sce.trustAsHtml(vm.program.description);
 			vm.authentication      = Authentication;
@@ -60,7 +61,7 @@
 			// -------------------------------------------------------------------------
 			vm.publish = function (state) {
 				var publishedState = program.isPublished;
-				var t = state ? 'Published' : 'Un-Published'
+				var t = state ? 'Published' : 'Un-Published';
 				program.isPublished = state;
 				program.createOrUpdate ()
 				//

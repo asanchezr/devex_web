@@ -29,6 +29,7 @@ module.exports.renderIndex = (req, res) => {
  * Initialize local variables in express app.
  */
 module.exports.initLocalVariables = function(app) {
+
 	// Setting application local variables
 	app.locals.title = config.app.title;
 	app.locals.description = config.app.description;
@@ -45,9 +46,9 @@ module.exports.initLocalVariables = function(app) {
 
 	// Passing the request url to environment locals
 	app.use(function (req, res, next) {
-	res.locals.host = req.protocol + '://' + req.hostname;
-	res.locals.url = req.protocol + '://' + req.headers.host + req.originalUrl;
-	next();
+		res.locals.host = req.protocol + '://' + req.hostname;
+		res.locals.url = req.protocol + '://' + req.headers.host + req.originalUrl;
+		next();
 	});
 
 	app.enable('trust proxy');
@@ -137,12 +138,14 @@ module.exports.initHelmetHeaders = function(app) {
  * Configure the client static routes
  */
 module.exports.initModuleRoutes = function (app) {
+
 	app.use('/', express.static(path.resolve('./public'), { maxAge: 86400000 }));
-	app.route('/').get(this.renderIndex);
 
 	config.folders.forEach(function (staticPath) {
 		app.use(staticPath, express.static(path.resolve('./' + staticPath)));
 	});
+
+	app.route('/*').get(this.renderIndex);
 };
 
 let app = express();

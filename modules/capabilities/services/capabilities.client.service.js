@@ -8,7 +8,7 @@
 	//
 	// -------------------------------------------------------------------------
 	.factory ('CapabilitiesService', ['$resource', '$log', function ($resource, $log) {
-		var Capability = $resource ('/api/capabilities/:capabilityId', {
+		var Capability = $resource (window.apiUrl + '/api/capabilities/:capabilityId', {
 			capabilityId: '@_id'
 		}, {
 			update: {
@@ -33,7 +33,7 @@
 	//
 	// -------------------------------------------------------------------------
 	.factory ('CapabilitySkillsService', ['$resource', '$log', function ($resource, $log) {
-		var CapabilitySkill = $resource ('/api/capabilityskill/:capabilityskillId', {
+		var CapabilitySkill = $resource (window.apiUrl + '/api/capabilityskill/:capabilityskillId', {
 			capabilityskillId: '@_id'
 		}, {
 			update: {

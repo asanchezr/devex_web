@@ -19,6 +19,7 @@
 	.controller('OrgViewController', ['$sce', 'org', 'Authentication', function ($sce, org, Authentication) {
 		var vm             = this;
 		vm.org             = org;
+		vm.org.orgImageURL = window.apiUrl + '/' + vm.org.orgImageURL;
 		vm.user            = Authentication.user;
 		vm.isLoggedIn      = !!vm.user;
 		vm.isAdmin         = vm.user && !!~Authentication.user.roles.indexOf ('admin');

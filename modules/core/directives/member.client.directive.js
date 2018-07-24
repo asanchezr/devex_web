@@ -30,18 +30,22 @@
 				var reset = function () {
 					queryObject = {};
 					queryObject[$scope.idstring] = $scope.model._id;
-					modelService.getMembers (queryObject).$promise.then (function (result) {
-						vm.members = result;
-						var columnLength = Math.floor (result.length / 2) + (result.length % 2);
+					modelService.getMembers (queryObject).$promise
+					.then (function (members) {
+						members.forEach(member => {
+							member.profileImageURL = window.apiUrl + '/' + member.profileImageURL;
+						});
+						vm.members = members;
+						var columnLength = Math.floor (members.length / 2) + (members.length % 2);
 						vm.columns = [{
 							start : 0,
 							end   : columnLength
 						},{
 							start : columnLength,
-							end   : result.length
+							end   : members.length
 						}];
 					});
-				}
+				};
 				vm.delete = function (userid, username, type) {
 					var adminMessage = 'Are you sure you want to remove '+username+' (this member)?';
 					var userMessage = 'Are you sure you want to remove yourself from this membership list?';
@@ -58,7 +62,7 @@
 				});
 				reset ();
 			}]
-		}
+		};
 	})
 	// -------------------------------------------------------------------------
 	//
@@ -97,7 +101,7 @@
 							end   : result.length
 						}];
 					});
-				}
+				};
 				vm.confirm = function (userid) {
 					queryObject.userId = userid;
 					modelService.confirmMember (queryObject).$promise.then (function () {
@@ -115,7 +119,7 @@
 				});
 				reset ();
 			}]
-		}
+		};
 	})
 
 	.filter ('slice', function () {
@@ -146,7 +150,7 @@
 				memo[count][len] = arr;
 			}
 			return memo[count][len];
-		}
+		};
 	});
 
 

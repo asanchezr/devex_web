@@ -8,7 +8,7 @@
   ProgramsService.$inject = ['$resource', '$log'];
 
   function ProgramsService($resource, $log) {
-    var Program = $resource('/api/programs/:programId', {
+    var Program = $resource(window.apiUrl + '/api/programs/:programId', {
       programId: '@_id'
     }, {
       update: {
@@ -16,35 +16,35 @@
       },
       makeRequest: {
         method: 'GET',
-        url :'/api/request/program/:programId'
+        url : window.apiUrl + '/api/request/program/:programId'
       },
       my: {
         method: 'GET',
-        url: '/api/my/programs',
+        url: window.apiUrl + '/api/my/programs',
         isArray: true
       },
       myadmin: {
         method: 'GET',
-        url: '/api/myadmin/programs',
+        url: window.apiUrl + '/api/myadmin/programs',
         isArray: true
       },
       getRequests: {
         method: 'GET',
-        url :'/api/programs/requests/:programId',
+        url : window.apiUrl + '/api/programs/requests/:programId',
         isArray: true
       },
       getMembers: {
         method: 'GET',
-        url :'/api/programs/members/:programId',
+        url : window.apiUrl + '/api/programs/members/:programId',
         isArray: true
       },
       confirmMember: {
         method: 'GET',
-        url : '/api/programs/requests/confirm/:programId/:userId'
+        url : window.apiUrl + '/api/programs/requests/confirm/:programId/:userId'
       },
       denyMember: {
         method: 'GET',
-        url : '/api/programs/requests/deny/:programId/:userId'
+        url : window.apiUrl + '/api/programs/requests/deny/:programId/:userId'
       }
     });
 

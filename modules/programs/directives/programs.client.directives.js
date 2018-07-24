@@ -19,10 +19,18 @@
 				vm.isAdmin = isAdmin;
 				vm.isGov = isGov;
 				vm.userCanAdd = (isAdmin || isGov);
-				vm.programs = ProgramsService.query ();
+
+				// Query for list of programs, process img URLs to point to API host, and then display
+				ProgramsService.query().$promise
+				.then(programs => {
+					programs.forEach(program => {
+						program.logo = window.apiUrl + '/' + program.logo;
+					});
+					vm.programs = programs;
+				});
 				vm.publish = function (program, state) {
 					var publishedState = program.isPublished;
-					var t = state ? 'Published' : 'Un-Published'
+					var t = state ? 'Published' : 'Un-Published';
 					program.isPublished = state;
 					program.createOrUpdate ()
 					//
@@ -60,7 +68,7 @@
 					});
 				};
 			}]
-		}
+		};
 	})
 	;
 }());

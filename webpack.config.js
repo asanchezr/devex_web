@@ -41,6 +41,7 @@ module.exports = {
     resolve: {
         mainFiles: ['index', 'compile/minified/ng-img-crop']
     },
+    devtool: "source-map",
     optimization: {
         minimize: true
     },

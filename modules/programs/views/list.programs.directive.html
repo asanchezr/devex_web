@@ -21,7 +21,7 @@
     <a class="btn btn-text-only" ng-if="vm.isGov && !program.userIs.member && !program.userIs.request" href="javascript:void(0);" ng-click="vm.request(program)" ng-click="$event.stopPropagation()" uib-tooltip="Request Membership"><i class="fa fa-user"></i></a>
     <a class="btn btn-text-only" ng-if="vm.isAdmin || program.userIs.admin" href="javascript:void(0);"  id="programadmin.edit" ui-sref="programadmin.edit({ programId: program.code })" ng-click="$event.stopPropagation()" title="Edit"><i class="fa fa-pencil"></i></a>
   </div>
-  <img class="card-img-left" src="/{{program.logo}}">
+  <img class="card-img-left" ng-src="{{program.logo}}">
   <div class="card-body" id="programs.view" ui-sref="programs.view({ programId: program.code })">
     <div class="card-title" ng-bind="program.title"></div>
     <div class="card-teaser" ng-bind="program.short"></div>

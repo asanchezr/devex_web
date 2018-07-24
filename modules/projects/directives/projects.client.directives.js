@@ -52,7 +52,7 @@
 				if ($scope.title) vm.title = $scope.title;
 				vm.publish = function (project, state) {
 					var publishedState = project.isPublished;
-					var t = state ? 'Published' : 'Un-Published'
+					var t = state ? 'Published' : 'Un-Published';
 					project.isPublished = state;
 					project.createOrUpdate ()
 					//
@@ -90,7 +90,7 @@
 					});
 				};
 			}]
-		}
+		};
 	})
 	;
 }());
