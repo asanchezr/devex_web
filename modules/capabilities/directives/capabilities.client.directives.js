@@ -15,7 +15,7 @@
 				context     : '@',
 				capabilities : '='
 			},
-			templateUrl  : '/modules/capabilities/client/views/list.capabilities.directive.html',
+			templateUrl  : '/modules/capabilities/views/list.capabilities.directive.html',
 			controller   : ['$sce', '$rootScope', '$scope', 'CapabilitiesService', 'Authentication', function ($sce, $rootScope, $scope, CapabilitiesService, Authentication) {
 				var vm          = this;
 				vm.trust        = $sce.trustAsHtml;
@@ -44,7 +44,7 @@
 				size       : '@',
 				capability : '='
 			},
-			templateUrl  : '/modules/capabilities/client/views/view.capability.directive.html',
+			templateUrl  : '/modules/capabilities/views/view.capability.directive.html',
 			controller   : ['$scope', 'Authentication', function ($scope, Authentication) {
 				var vm        = this;
 				vm.auth       = Authentication;

@@ -44,7 +44,7 @@
 				wsx.edit = function () {
 					$uibModal.open ({
 						size: 'md',
-						templateUrl: '/modules/users/client/views/settings/change-profile-modal.html',
+						templateUrl: '/modules/users/views/settings/change-profile-modal.html',
 						controllerAs: 'qqq',
 						bindToController: true,
 						controller: ['$state', '$timeout', 'Authentication', '$uibModalInstance', 'Upload', 'Notification', function ($state, $timeout, Authentication, $uibModalInstance, Upload, Notification) {

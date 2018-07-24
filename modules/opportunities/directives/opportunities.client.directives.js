@@ -16,7 +16,7 @@
 				title: '@',
 				context: '@'
 			},
-			templateUrl  : '/modules/opportunities/client/views/opportunity-list-directive.html',
+			templateUrl  : '/modules/opportunities/views/opportunity-list-directive.html',
 			controller   : [
 				'$scope',
 				'OpportunitiesService',

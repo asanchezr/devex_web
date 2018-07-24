@@ -14,7 +14,7 @@
 			.state('settings', {
 				abstract: true,
 				url: '/settings',
-				templateUrl: '/modules/users/client/views/settings/settings.client.view.html',
+				templateUrl: '/modules/users/views/settings/settings.client.view.html',
 				controller: 'SettingsController',
 				controllerAs: 'vm',
 				data: {
@@ -28,7 +28,7 @@
 			})
 			.state ('settings.skills', {
 				url: '/skills',
-				templateUrl: '/modules/users/client/views/settings/profile-skills.html',
+				templateUrl: '/modules/users/views/settings/profile-skills.html',
 				controller: 'ProfileSkillsController',
 				controllerAs: 'vm',
 				data: {
@@ -37,7 +37,7 @@
 			})
 			.state ('settings.privacy', {
 				url: '/privacy',
-				templateUrl: '/modules/users/client/views/settings/profile-privacy.html',
+				templateUrl: '/modules/users/views/settings/profile-privacy.html',
 				controller: 'ProfilePrivacyController',
 				controllerAs: 'vm',
 				data: {
@@ -46,7 +46,7 @@
 			})
 			.state ('settings.messages', {
 				url: '/messages',
-				templateUrl: '/modules/users/client/views/settings/profile-messages.html',
+				templateUrl: '/modules/users/views/settings/profile-messages.html',
 				controller: 'ProfileMessagesController',
 				controllerAs: 'vm',
 				data: {
@@ -55,7 +55,7 @@
 			})
 			.state('settings.profile', {
 				url: '/profile',
-				templateUrl: '/modules/users/client/views/settings/profile-main.html',
+				templateUrl: '/modules/users/views/settings/profile-main.html',
 				controller: 'EditProfileController',
 				controllerAs: 'vm',
 				data: {
@@ -64,7 +64,7 @@
 			})
 			.state('settings.payment', {
 				url: '/payment',
-				templateUrl: '/modules/users/client/views/settings/payment-settings.client.view.html',
+				templateUrl: '/modules/users/views/settings/payment-settings.client.view.html',
 				controller: 'EditProfileController',
 				controllerAs: 'vm',
 				data: {
@@ -73,7 +73,7 @@
 			})
 			.state('settings.password', {
 				url: '/password',
-				templateUrl: '/modules/users/client/views/settings/change-password.client.view.html',
+				templateUrl: '/modules/users/views/settings/change-password.client.view.html',
 				controller: 'ChangePasswordController',
 				controllerAs: 'vm',
 				data: {
@@ -83,7 +83,7 @@
 			.state('authentication', {
 				abstract: true,
 				url: '/authentication',
-				templateUrl: '/modules/users/client/views/authentication/authentication.client.view.html',
+				templateUrl: '/modules/users/views/authentication/authentication.client.view.html',
 				controller: 'AuthenticationController',
 				controllerAs: 'vm',
 				resolve: {
@@ -94,7 +94,7 @@
 			})
 			.state('authentication.gov', {
 				url: '/government',
-				templateUrl: '/modules/users/client/views/authentication/gov.client.view.html',
+				templateUrl: '/modules/users/views/authentication/gov.client.view.html',
 				controller: 'AuthenticationController',
 				controllerAs: 'vm',
 				data: {
@@ -103,7 +103,7 @@
 			})
 			.state('authentication.signinadmin', {
 				url: '/signinadmin?err',
-				templateUrl: '/modules/users/client/views/authentication/signin.admin.client.view.html',
+				templateUrl: '/modules/users/views/authentication/signin.admin.client.view.html',
 				controller: 'AuthenticationController',
 				controllerAs: 'vm',
 				data: {
@@ -112,7 +112,7 @@
 			})
 		 .state('signup', {
 				url: '/signup',
-				templateUrl: '/modules/users/client/views/authentication/signup.client.view.html',
+				templateUrl: '/modules/users/views/authentication/signup.client.view.html',
 				controller: 'AuthenticationController',
 				controllerAs: 'vm',
 				data: {
@@ -121,7 +121,7 @@
 			})
 			.state('authentication.signin', {
 				url: '/signin?err',
-				templateUrl: '/modules/users/client/views/authentication/signin.client.view.html',
+				templateUrl: '/modules/users/views/authentication/signin.client.view.html',
 				controller: 'AuthenticationController',
 				controllerAs: 'vm',
 				data: {
@@ -135,7 +135,7 @@
 			})
 			.state('password.forgot', {
 				url: '/forgot',
-				templateUrl: '/modules/users/client/views/password/forgot-password.client.view.html',
+				templateUrl: '/modules/users/views/password/forgot-password.client.view.html',
 				controller: 'PasswordController',
 				controllerAs: 'vm',
 				data: {
@@ -149,21 +149,21 @@
 			})
 			.state('password.reset.invalid', {
 				url: '/invalid',
-				templateUrl: '/modules/users/client/views/password/reset-password-invalid.client.view.html',
+				templateUrl: '/modules/users/views/password/reset-password-invalid.client.view.html',
 				data: {
 					pageTitle: 'Password reset invalid'
 				}
 			})
 			.state('password.reset.success', {
 				url: '/success',
-				templateUrl: '/modules/users/client/views/password/reset-password-success.client.view.html',
+				templateUrl: '/modules/users/views/password/reset-password-success.client.view.html',
 				data: {
 					pageTitle: 'Password reset success'
 				}
 			})
 			.state('password.reset.form', {
 				url: '/:token',
-				templateUrl: '/modules/users/client/views/password/reset-password.client.view.html',
+				templateUrl: '/modules/users/views/password/reset-password.client.view.html',
 				controller: 'PasswordController',
 				controllerAs: 'vm',
 				data: {

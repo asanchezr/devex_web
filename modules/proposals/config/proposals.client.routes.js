@@ -32,7 +32,7 @@
 		// -------------------------------------------------------------------------
 		.state ('proposals.list', {
 			url: '',
-			templateUrl: '/modules/proposals/client/views/list-proposals.client.view.html',
+			templateUrl: '/modules/proposals/views/list-proposals.client.view.html',
 			data: {
 				pageTitle: 'Proposals List'
 			},
@@ -58,7 +58,7 @@
 			data: {
 				roles: ['user']
 			},
-			templateUrl: '/modules/proposals/client/views/cwu-proposal-view.html',
+			templateUrl: '/modules/proposals/views/cwu-proposal-view.html',
 			controller: 'ProposalViewController',
 			controllerAs: 'ppp',
 			bindToController: true,
@@ -80,7 +80,7 @@
 			data: {
 				roles: ['user']
 			},
-			templateUrl: '/modules/proposals/client/views/swu-proposal-view.html',
+			templateUrl: '/modules/proposals/views/swu-proposal-view.html',
 			controller: 'ProposalViewSWUController',
 			controllerAs: 'ppp',
 			bindToController: true,
@@ -121,7 +121,7 @@
 				roles: ['user'],
 				notroles: ['gov']
 			},
-			templateUrl: '/modules/proposals/client/views/cwu-proposal-edit.html',
+			templateUrl: '/modules/proposals/views/cwu-proposal-edit.html',
 			controller: 'ProposalEditController',
 			controllerAs: 'ppp',
 			bindToController: true,
@@ -157,7 +157,7 @@
 				roles: ['user'],
 				notroles: ['gov']
 			},
-			templateUrl: '/modules/proposals/client/views/cwu-proposal-edit.html',
+			templateUrl: '/modules/proposals/views/cwu-proposal-edit.html',
 			controller: 'ProposalEditController',
 			controllerAs: 'ppp',
 			bindToController: true,
@@ -195,7 +195,7 @@
 				roles: ['user'],
 				notroles: ['gov']
 			},
-			templateUrl: '/modules/proposals/client/views/swu-proposal-edit.html',
+			templateUrl: '/modules/proposals/views/swu-proposal-edit.html',
 			controller: 'ProposalEditSWUController',
 			controllerAs: 'ppp',
 			bindToController: true,
@@ -248,7 +248,7 @@
 				roles: ['user'],
 				notroles: ['gov']
 			},
-			templateUrl: '/modules/proposals/client/views/swu-proposal-edit.html',
+			templateUrl: '/modules/proposals/views/swu-proposal-edit.html',
 			controller: 'ProposalEditSWUController',
 			controllerAs: 'ppp',
 			bindToController: true,

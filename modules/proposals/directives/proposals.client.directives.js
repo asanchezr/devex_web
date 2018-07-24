@@ -24,7 +24,7 @@
 			replace: true,
 			restrict     : 'E',
 			controllerAs : 'qaz',
-			templateUrl  : '/modules/proposals/client/views/proposal-apply.directive2.html',
+			templateUrl  : '/modules/proposals/views/proposal-apply.directive2.html',
 			scope        : {
 				opportunity: '=',
 				proposal: '='
@@ -93,7 +93,7 @@
 				title: '@',
 				context: '@'
 			},
-			templateUrl  : '/modules/proposals/client/views/list.proposals.directive.html',
+			templateUrl  : '/modules/proposals/views/list.proposals.directive.html',
 			controller   : ['$scope', 'ProposalsService', 'Authentication', 'Notification', function ($scope, ProposalsService, Authentication, Notification) {
 				var vm     = this;
 				vm.opportunity = $scope.opportunity;
@@ -193,7 +193,7 @@
 				title: '@',
 				context: '@'
 			},
-			templateUrl  : '/modules/proposals/client/views/company-proposals-directive.html',
+			templateUrl  : '/modules/proposals/views/company-proposals-directive.html',
 			controller   : ['$scope', 'Authentication', function ($scope, Authentication) {
 				var vm     = this;
 				vm.program = $scope.program;

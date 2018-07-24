@@ -9,7 +9,7 @@
 			backdrop: true,
 			keyboard: true,
 			modalFade: true,
-			templateUrl: '/modules/core/client/views/modalService.service.html'
+			templateUrl: '/modules/core/views/modalService.service.html'
 		};
 
 		var modalOptions = {

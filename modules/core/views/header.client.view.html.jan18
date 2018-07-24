@@ -10,7 +10,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a id="home" ui-sref="home" href="/">
-				<img class="navbar-brand" src="/modules/core/client/img/logo/new-logo-white.svg" alt="BCDevExchange">
+				<img class="navbar-brand" src="/modules/core/img/logo/new-logo-white.svg" alt="BCDevExchange">
 			</a>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->

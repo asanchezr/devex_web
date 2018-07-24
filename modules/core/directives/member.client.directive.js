@@ -16,7 +16,7 @@
 				idstring: '=',
 				title: '@'
 			},
-			templateUrl  : '/modules/core/client/views/members.directive.html',
+			templateUrl  : '/modules/core/views/members.directive.html',
 			controller   : ['$scope', '$rootScope', 'Authentication', function ($scope, $rootScope, Authentication) {
 				var vm = this;
 				var isUser = Authentication.user;
@@ -75,7 +75,7 @@
 				idstring: '=',
 				title: '@'
 			},
-			templateUrl  : '/modules/core/client/views/member.requests.directive.html',
+			templateUrl  : '/modules/core/views/member.requests.directive.html',
 			controller   : ['$scope', '$rootScope', 'Authentication', function ($scope, $rootScope, Authentication) {
 				var vm = this;
 				var isUser                 = Authentication.user;

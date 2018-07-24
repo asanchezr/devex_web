@@ -26,7 +26,7 @@
 		// -------------------------------------------------------------------------
 		.state ('capabilities.list', {
 			url          : '',
-			templateUrl  : '/modules/capabilities/client/views/list-capabilities.client.view.html',
+			templateUrl  : '/modules/capabilities/views/list-capabilities.client.view.html',
 			controller   : 'CapabilitiesListController',
 			controllerAs : 'vm',
 			resolve: {
@@ -45,7 +45,7 @@
 		// -------------------------------------------------------------------------
 		.state ('capabilities.view', {
 			url          : '/:capabilityId',
-			templateUrl  : '/modules/capabilities/client/views/view-capability.client.view.html',
+			templateUrl  : '/modules/capabilities/views/view-capability.client.view.html',
 			controller   : 'CapabilityViewController',
 			controllerAs : 'vm',
 			resolve: {
@@ -76,7 +76,7 @@
 		// -------------------------------------------------------------------------
 		.state ('capabilityadmin.edit', {
 			url          : '/:capabilityId/edit',
-			templateUrl  : '/modules/capabilities/client/views/edit-capability.client.view.html',
+			templateUrl  : '/modules/capabilities/views/edit-capability.client.view.html',
 			controller   : 'CapabilityEditController',
 			controllerAs : 'qqq',
 			resolve: {
@@ -99,7 +99,7 @@
 		// -------------------------------------------------------------------------
 		.state ('capabilityadmin.create', {
 			url          : '/create',
-			templateUrl  : '/modules/capabilities/client/views/edit-capability.client.view.html',
+			templateUrl  : '/modules/capabilities/views/edit-capability.client.view.html',
 			controller   : 'CapabilityEditController',
 			controllerAs : 'qqq',
 			resolve: {

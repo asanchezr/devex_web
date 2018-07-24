@@ -27,7 +27,7 @@
 		// -------------------------------------------------------------------------
 		.state('programs.list', {
 			url: '',
-			templateUrl: '/modules/programs/client/views/list-programs.client.view.html',
+			templateUrl: '/modules/programs/views/list-programs.client.view.html',
 			data: {
 				pageTitle: 'Programs List'
 			},
@@ -49,7 +49,7 @@
 		// -------------------------------------------------------------------------
 		.state('programs.view', {
 			url: '/:programId',
-			templateUrl: '/modules/programs/client/views/view-program.client.view.html',
+			templateUrl: '/modules/programs/views/view-program.client.view.html',
 			controller: 'ProgramViewController',
 			controllerAs: 'vm',
 			resolve: {
@@ -84,7 +84,7 @@
 		// -------------------------------------------------------------------------
 		.state('programadmin.edit', {
 			url: '/:programId/edit',
-			templateUrl: '/modules/programs/client/views/edit-program.client.view.html',
+			templateUrl: '/modules/programs/views/edit-program.client.view.html',
 			controller: 'ProgramEditController',
 			controllerAs: 'vm',
 			resolve: {
@@ -118,7 +118,7 @@
 		// -------------------------------------------------------------------------
 		.state('programadmin.create', {
 			url: '/create',
-			templateUrl: '/modules/programs/client/views/edit-program.client.view.html',
+			templateUrl: '/modules/programs/views/edit-program.client.view.html',
 			controller: 'ProgramEditController',
 			controllerAs: 'vm',
 			resolve: {

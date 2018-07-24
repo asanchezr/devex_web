@@ -336,7 +336,7 @@
 			vm.questions = function () {
 				modalService.showModal ({
 					size: 'lg',
-					templateUrl: '/modules/opportunities/client/views/swu-opportunity-modal-questions.html',
+					templateUrl: '/modules/opportunities/views/swu-opportunity-modal-questions.html',
 					controller: ['$scope', '$uibModalInstance', function ($scope, $uibModalInstance) {
 
 						$scope.data                = {};
@@ -472,7 +472,7 @@
 			vm.codeChallenge = function () {
 				modalService.showModal ({
 					size: 'sm',
-					templateUrl: '/modules/opportunities/client/views/swu-opportunity-modal-code-challenge.html',
+					templateUrl: '/modules/opportunities/views/swu-opportunity-modal-code-challenge.html',
 					controller: ['$scope', '$uibModalInstance', function ($scope, $uibModalInstance) {
 						$scope.data = {};
 						$scope.data.proposalScores = [];
@@ -541,7 +541,7 @@
 			vm.showCompanyInfo = function(proposal) {
 				modalService.showModal({
 					size: 'md',
-					templateUrl: '/modules/proposals/client/views/swu-proposal-view.html',
+					templateUrl: '/modules/proposals/views/swu-proposal-view.html',
 					controller: ['$scope', '$uibModalInstance', function($scope, $uibModalInstance) {
 						$scope.data = {};
 						$scope.data.proposal = proposal;
@@ -582,7 +582,7 @@
 			vm.openQuestionVetting = function() {
 				modalService.showModal({
 					size: 'md',
-					templateUrl: '/modules/opportunities/client/views/swu-opportunity-modal-question-vetting.html',
+					templateUrl: '/modules/opportunities/views/swu-opportunity-modal-question-vetting.html',
 					controller: ['$scope', '$uibModalInstance', function($scope, $uibModalInstance) {
 						$scope.data				   = {};
 						$scope.data.questions      = [];
@@ -641,7 +641,7 @@
 			vm.interview = function () {
 				modalService.showModal ({
 					size: 'sm',
-					templateUrl: '/modules/opportunities/client/views/swu-opportunity-modal-interview.html',
+					templateUrl: '/modules/opportunities/views/swu-opportunity-modal-interview.html',
 					controller: ['$scope', '$uibModalInstance', function ($scope, $uibModalInstance) {
 						$scope.data = {};
 						$scope.data.proposalScores = [];

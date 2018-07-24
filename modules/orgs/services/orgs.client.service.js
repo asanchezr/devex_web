@@ -1,7 +1,8 @@
 (function () {
 	'use strict';
 	angular.module ('orgs.services').factory ('OrgsService', ['$resource', '$log', function ($resource, $log) {
-		var Org = $resource ('/api/orgs/:orgId', {
+
+		var Org = $resource (window.apiUrl + '/api/orgs/:orgId', {
 			orgId: '@_id'
 		}, {
 			update: {
@@ -9,27 +10,27 @@
 			},
 			list: {
 				method: 'GET',
-				url: '/api/orgs',
+				url: window.apiUrl + '/api/orgs',
 				isArray: true
 			},
 			my: {
 				method: 'GET',
-				url: '/api/my/orgs',
+				url: window.apiUrl + '/api/my/orgs',
 				isArray: true
 			},
 			myadmin: {
 				method: 'GET',
-				url: '/api/myadmin/orgs',
+				url: window.apiUrl + '/api/myadmin/orgs',
 				isArray: true
 			},
 			removeUser: {
 				method: 'GET',
-				url: '/api/orgs/:orgId/user/:userId/remove',
+				url: window.apiUrl + '/api/orgs/:orgId/user/:userId/remove',
 				isArray: false
 			},
 			addMeToOrg: {
 				method: 'GET',
-				url: '/api/addmeto/org/:orgId',
+				url: window.apiUrl + '/api/addmeto/org/:orgId',
 				isArray: false
 			}
 		});

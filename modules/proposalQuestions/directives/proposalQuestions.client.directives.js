@@ -15,7 +15,7 @@
 				context     : '@',
 				proposalQuestions : '='
 			},
-			templateUrl  : '/modules/proposalQuestions/client/views/list.proposalQuestions.directive.html',
+			templateUrl  : '/modules/proposalQuestions/views/list.proposalQuestions.directive.html',
 			controller   : function ($sce, $rootScope, $scope, PropsalQuestionsService, Authentication) {
 				var vm         = this;
 				vm.trust       = $sce.trustAsHtml;
@@ -43,7 +43,7 @@
 				mode       : '@',
 				propsalQuestion : '='
 			},
-			templateUrl  : '/modules/proposalQuestions/client/views/view.propsalQuestion.directive.html',
+			templateUrl  : '/modules/proposalQuestions/views/view.propsalQuestion.directive.html',
 			controller   : function ($scope, Authentication) {
 				var vm        = this;
 				vm.auth       = Authentication;

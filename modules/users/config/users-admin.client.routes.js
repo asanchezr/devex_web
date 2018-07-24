@@ -12,7 +12,7 @@
     $stateProvider
         .state('admin.govs', {
         url: '/govs',
-        templateUrl: '/modules/users/client/views/admin/list-govs.client.view.html',
+        templateUrl: '/modules/users/views/admin/list-govs.client.view.html',
         controller: 'GovListController',
         controllerAs: 'vm',
         data: {
@@ -21,7 +21,7 @@
       })
        .state('admin.gov', {
         url: '/govs/:userId',
-        templateUrl: '/modules/users/client/views/admin/view-govs.client.view.html',
+        templateUrl: '/modules/users/views/admin/view-govs.client.view.html',
         controller: 'GovController',
         controllerAs: 'vm',
         resolve: {
@@ -33,7 +33,7 @@
       })
       .state('admin.gov-edit', {
         url: '/govs/:userId/edit',
-        templateUrl: '/modules/users/client/views/admin/edit-govs.client.view.html',
+        templateUrl: '/modules/users/views/admin/edit-govs.client.view.html',
         controller: 'GovController',
         controllerAs: 'vm',
         resolve: {
@@ -45,7 +45,7 @@
       })
       .state('admin.users', {
         url: '/users',
-        templateUrl: '/modules/users/client/views/admin/list-users.client.view.html',
+        templateUrl: '/modules/users/views/admin/list-users.client.view.html',
         controller: 'UserListController',
         controllerAs: 'vm',
         data: {
@@ -54,7 +54,7 @@
       })
       .state('admin.user', {
         url: '/users/:userId',
-        templateUrl: '/modules/users/client/views/admin/view-user.client.view.html',
+        templateUrl: '/modules/users/views/admin/view-user.client.view.html',
         controller: 'UserController',
         controllerAs: 'vm',
         resolve: {
@@ -66,7 +66,7 @@
       })
       .state('admin.notifyopps', {
         url: '/notifyopps',
-        templateUrl: '/modules/users/client/views/admin/listopps.client.view.html',
+        templateUrl: '/modules/users/views/admin/listopps.client.view.html',
         controllerAs: 'vm',
         controller: function (users) {
           var vm = this;
@@ -80,7 +80,7 @@
       })
       .state('admin.notifymeets', {
         url: '/notifymeets',
-        templateUrl: '/modules/users/client/views/admin/listmeets.client.view.html',
+        templateUrl: '/modules/users/views/admin/listmeets.client.view.html',
         controllerAs: 'vm',
         controller: function (users) {
           var vm = this;
@@ -94,7 +94,7 @@
       })
       .state('admin.user-edit', {
         url: '/users/:userId/edit',
-        templateUrl: '/modules/users/client/views/admin/edit-user.client.view.html',
+        templateUrl: '/modules/users/views/admin/edit-user.client.view.html',
         controller: 'UserController',
         controllerAs: 'vm',
         resolve: {

@@ -1,8 +1,8 @@
 <section>
-  <div class="jumbotron text-center" style="background-image:url(/modules/core/client/img/headers/header1.jpg);background-size:cover">
+  <div class="jumbotron text-center" style="background-image:url(/modules/core/img/headers/header1.jpg);background-size:cover">
     <div class="row">
       <div class="col-md-6 col-md-offset-4 col-sm-6 col-sm-offset-4 col-xs-12">
-        <img alt="MEAN.JS" class="img-responsive text-center" src="/modules/core/client/img/brand/logo-white.png" />
+        <img alt="MEAN.JS" class="img-responsive text-center" src="/modules/core/img/brand/logo-white.png" />
       </div>
     </div>
     <br>
@@ -21,7 +21,7 @@
       <uib-tabset active="active" type="pills">
         <uib-tab index="0" heading="Developers">
           <br/>
-          <div class="jumbotron text-center" style="background-image:url(/modules/core/client/img/headers/Developers.jpg);background-size:cover">
+          <div class="jumbotron text-center" style="background-image:url(/modules/core/img/headers/Developers.jpg);background-size:cover">
           <h2 style="color:white">Developers</h2>
           <br/>
           <span>
@@ -53,7 +53,7 @@
 
         <uib-tab index="1" heading="Entrepreneurs">
           <br/>
-          <div class="jumbotron text-center" style="background-image:url(/modules/core/client/img/headers/Entrepreneurs.jpg);background-size:cover">
+          <div class="jumbotron text-center" style="background-image:url(/modules/core/img/headers/Entrepreneurs.jpg);background-size:cover">
           <h2 style="color:white">Entrepreneurs</h2>
           <br/>
           <span>
@@ -85,7 +85,7 @@
 
         <uib-tab index="2" heading="Public Sector">
           <br/>
-          <div class="jumbotron text-center" style="background-image:url(/modules/core/client/img/headers/partner.jpg);background-size:cover">
+          <div class="jumbotron text-center" style="background-image:url(/modules/core/img/headers/partner.jpg);background-size:cover">
           <h2 style="color:white">Public Sector</h2>
           <br/>
           <span>

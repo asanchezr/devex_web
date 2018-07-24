@@ -11,7 +11,7 @@
 			restrict     : 'E',
 			controllerAs : 'vm',
 			scope        : {},
-			templateUrl  : '/modules/programs/client/views/list.programs.directive.html',
+			templateUrl  : '/modules/programs/views/list.programs.directive.html',
 			controller   : ['ProgramsService', 'Authentication', 'Notification', function (ProgramsService, Authentication, Notification) {
 				var vm = this;
 				var isAdmin  = Authentication.user && !!~Authentication.user.roles.indexOf ('admin');

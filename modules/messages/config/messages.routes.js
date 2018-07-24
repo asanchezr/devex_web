@@ -15,7 +15,7 @@
 		})
 		.state ('messagetemplates.list', {
 			url          : '',
-			templateUrl  : '/modules/messages/client/views/message-template-list.html',
+			templateUrl  : '/modules/messages/views/message-template-list.html',
 			data         : { pageTitle: 'Message Templates List' },
 			resolve      : {
 				templates: ['MessageTemplatesService', function (MessageTemplatesService) {
@@ -27,7 +27,7 @@
 		})
 		.state ('messagetemplates.view', {
 			url          : '/:templateId',
-			templateUrl  : '/modules/messages/client/views/message-template-view.html',
+			templateUrl  : '/modules/messages/views/message-template-view.html',
 			data         : { pageTitle: 'Message Templates List' },
 			resolve      : {
 				template: ['MessageTemplatesService', '$stateParams', function (MessageTemplatesService, $stateParams) {
@@ -56,7 +56,7 @@
 		// -------------------------------------------------------------------------
 		.state ('messagetemplatesadmin.edit', {
 			url          : '/:templateId/edit',
-			templateUrl  : '/modules/messages/client/views/message-template-edit.html',
+			templateUrl  : '/modules/messages/views/message-template-edit.html',
 			controller   : 'MessageTemplateEditController',
 			controllerAs : 'qqq',
 			resolve: {
@@ -79,7 +79,7 @@
 		// -------------------------------------------------------------------------
 		.state ('messagetemplatesadmin.create', {
 			url          : '/create',
-			templateUrl  : '/modules/messages/client/views/message-template-edit.html',
+			templateUrl  : '/modules/messages/views/message-template-edit.html',
 			controller   : 'MessageTemplateEditController',
 			controllerAs : 'qqq',
 			resolve: {
@@ -105,7 +105,7 @@
 		})
 		.state ('messages.view', {
 			url          : '/:messageId',
-			templateUrl  : '/modules/messages/client/views/message-view.html',
+			templateUrl  : '/modules/messages/views/message-view.html',
 			data         : { pageTitle: 'Message View' },
 			resolve      : {
 				message: ['MessagesService', '$stateParams', function (MessagesService, $stateParams) {

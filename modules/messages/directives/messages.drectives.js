@@ -13,7 +13,7 @@
 			scope        : {
 				context   : '@'
 			},
-			templateUrl  : '/modules/messages/client/views/message-list.html',
+			templateUrl  : '/modules/messages/views/message-list.html',
 			controller   : [
 				'$sce',
 				'$rootScope',
@@ -104,7 +104,7 @@
 			scope        : {
 				message : '='
 			},
-			templateUrl  : '/modules/messages/client/views/view.message.directive.html',
+			templateUrl  : '/modules/messages/views/view.message.directive.html',
 			controller   : ['$scope', 'Authentication', function ($scope, Authentication) {
 				var vm        = this;
 				vm.auth       = Authentication;

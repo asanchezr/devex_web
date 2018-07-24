@@ -362,7 +362,7 @@
 				override: '=',
 				stayPage: '='
 			},
-			templateUrl: '/modules/core/client/views/form-save-revert.client.view.html',
+			templateUrl: '/modules/core/views/form-save-revert.client.view.html',
 			link: function(scope, elem, attrs) {
 				scope.$parent.allowCancel = false;
 				// ----------------------------------------------------------------------------------

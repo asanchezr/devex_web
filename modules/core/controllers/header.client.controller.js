@@ -47,7 +47,7 @@
       vm.warning = $uibModal.open({
         size: 'sm',
         animation: true,
-        templateUrl: '/modules/core/client/views/modal.timeout.warning.html',
+        templateUrl: '/modules/core/views/modal.timeout.warning.html',
         windowClass: 'modal-danger',
         backdrop: 'static',
         bindToController: true,
@@ -67,7 +67,7 @@
 
       $scope.timedout = $uibModal.open({
         size: 'sm',
-        templateUrl: '/modules/core/client/views/modal.timeout.html',
+        templateUrl: '/modules/core/views/modal.timeout.html',
         windowClass: 'modal-danger',
         backdrop: 'static',
         bindToController: true,

@@ -236,7 +236,7 @@
 				// return;
 				modalService.showModal ({
 					size: 'lg',
-					templateUrl: '/modules/opportunities/client/views/swu-opportunity-modal-questions.html',
+					templateUrl: '/modules/opportunities/views/swu-opportunity-modal-questions.html',
 					controller: ['$scope', '$uibModalInstance', function ($scope, $uibModalInstance) {
 
 						$scope.data = {};
@@ -302,7 +302,7 @@
 			vm.interview = function (proposal) {
 				modalService.showModal ({
 					size: 'lg',
-					templateUrl: '/modules/opportunities/client/views/swu-opportunity-modal-interview.html',
+					templateUrl: '/modules/opportunities/views/swu-opportunity-modal-interview.html',
 					controller: ['$scope', '$uibModalInstance', function ($scope, $uibModalInstance) {
 						$scope.data = {
 							score: proposal.scores.interview,

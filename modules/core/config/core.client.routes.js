@@ -29,7 +29,7 @@
 		$stateProvider
 			.state('home', {
 				url: '/',
-				templateUrl: '/modules/core/client/views/home.client.view.html',
+				templateUrl: '/modules/core/views/home.client.view.html',
 				controller: 'HomeController',
 				controllerAs: 'vm',
 				ncyBreadcrumb: {
@@ -38,7 +38,7 @@
 			})
 			.state('not-found', {
 				url: '/not-found',
-				templateUrl: '/modules/core/client/views/404.client.view.html',
+				templateUrl: '/modules/core/views/404.client.view.html',
 				controller: 'ErrorController',
 				controllerAs: 'vm',
 				params: {
@@ -56,7 +56,7 @@
 			})
 			.state('bad-request', {
 				url: '/bad-request',
-				templateUrl: '/modules/core/client/views/400.client.view.html',
+				templateUrl: '/modules/core/views/400.client.view.html',
 				controller: 'ErrorController',
 				controllerAs: 'vm',
 				params: {
@@ -74,7 +74,7 @@
 			})
 			.state('forbidden', {
 				url: '/forbidden',
-				templateUrl: '/modules/core/client/views/403.client.view.html',
+				templateUrl: '/modules/core/views/403.client.view.html',
 				data: {
 					ignoreState: true,
 					pageTitle: 'Forbidden'
@@ -82,7 +82,7 @@
 			})
 			.state('disclaimer', {
 				url: '/disclaimer',
-				templateUrl: '/modules/core/client/views/disclaimer.client.view.html',
+				templateUrl: '/modules/core/views/disclaimer.client.view.html',
 				data: {
 					ignoreState: true,
 					pageTitle: 'Disclaimer'
@@ -90,7 +90,7 @@
 			})
 			.state('privacy', {
 				url: '/privacy',
-				templateUrl: '/modules/core/client/views/privacy.client.view.html',
+				templateUrl: '/modules/core/views/privacy.client.view.html',
 				data: {
 					ignoreState: true,
 					pageTitle: 'Privacy'
@@ -98,7 +98,7 @@
 			})
 			.state('accessibility', {
 				url: '/accessibility',
-				templateUrl: '/modules/core/client/views/accessibility.client.view.html',
+				templateUrl: '/modules/core/views/accessibility.client.view.html',
 				data: {
 					ignoreState: true,
 					pageTitle: 'Accessibility'
@@ -106,7 +106,7 @@
 			})
 			.state('workwithus', {
 				url: '/workwithus',
-				templateUrl: '/modules/core/client/views/workwithus.view.html',
+				templateUrl: '/modules/core/views/workwithus.view.html',
 				data: {
 					ignoreState: true,
 					pageTitle: 'Work With Us'
@@ -114,7 +114,7 @@
 			})
 			.state('codewithus', {
 				url: '/codewithus',
-				templateUrl: '/modules/core/client/views/codewithus.view.html',
+				templateUrl: '/modules/core/views/codewithus.view.html',
 				data: {
 					ignoreState: true,
 					pageTitle: 'Code With Us'
@@ -122,7 +122,7 @@
 			})
 			.state('roadmap', {
 				url: '/roadmap',
-				templateUrl: '/modules/core/client/views/roadmap.view.html',
+				templateUrl: '/modules/core/views/roadmap.view.html',
 				data: {
 					ignoreState: true,
 					pageTitle: 'Roadmap'
@@ -130,7 +130,7 @@
 			})
 			.state('iotblog', {
 				url: '/iotblog',
-				templateUrl: '/modules/core/client/views/iotblog.view.html',
+				templateUrl: '/modules/core/views/iotblog.view.html',
 				data: {
 					ignoreState: true,
 					pageTitle: 'IOT Blog'
@@ -138,7 +138,7 @@
 			})
 			.state('codewithusps', {
 				url: '/codewithusps',
-				templateUrl: '/modules/core/client/views/codewithus-ps.view.html',
+				templateUrl: '/modules/core/views/codewithus-ps.view.html',
 				data: {
 					ignoreState: true,
 					pageTitle: 'Code With Us'
@@ -146,7 +146,7 @@
 			})
 			.state('sprintwithus', {
 				url: '/sprintwithus',
-				templateUrl: '/modules/core/client/views/sprintwithus.view.html',
+				templateUrl: '/modules/core/views/sprintwithus.view.html',
 				data: {
 					ignoreState: true,
 					pageTitle: 'Sprint With Us'
@@ -154,7 +154,7 @@
 			})
 			.state('sprintwithus-howtoapply', {
 				url: '/sprintwithus-howtoapply',
-				templateUrl: '/modules/core/client/views/sprintwithus-howtoapply.view.html',
+				templateUrl: '/modules/core/views/sprintwithus-howtoapply.view.html',
 				data: {
 					ignoreState: true,
 					pageTitle: 'Sprint With Us'
@@ -162,7 +162,7 @@
 			})
 			.state('sprintwithusps', {
 				url: '/sprintwithusps',
-				templateUrl: '/modules/core/client/views/sprintwithus-ps.view.html',
+				templateUrl: '/modules/core/views/sprintwithus-ps.view.html',
 				data: {
 					ignoreState: true,
 					pageTitle: 'Sprint With Us'
@@ -170,7 +170,7 @@
 			})
 			.state('about', {
 				url: '/about',
-				templateUrl: '/modules/core/client/views/about.view.html',
+				templateUrl: '/modules/core/views/about.view.html',
 				data: {
 					ignoreState: true,
 					pageTitle: 'About Us'
@@ -178,7 +178,7 @@
 			})
 			.state('copyright', {
 				url: '/copyright',
-				templateUrl: '/modules/core/client/views/copyright.client.view.html',
+				templateUrl: '/modules/core/views/copyright.client.view.html',
 				data: {
 					ignoreState: true,
 					pageTitle: 'Copyright'
@@ -188,7 +188,7 @@
 				url: '/template/:templateId',
 				templateUrl: function ($stateParams) {
 					var id = $stateParams.templateId;
-					return '/modules/core/client/views/templates/template-'+id+'.html';
+					return '/modules/core/views/templates/template-'+id+'.html';
 				},
 				data: {
 					ignoreState: true,

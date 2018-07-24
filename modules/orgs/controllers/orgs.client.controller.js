@@ -364,7 +364,7 @@
 				return new Promise (function (resolve, reject) {
 					modalService.showModal ({
 						size: 'sm',
-						templateUrl: '/modules/orgs/client/views/org-members-results.html',
+						templateUrl: '/modules/orgs/views/org-members-results.html',
 						controller: ['$scope', '$uibModalInstance', function ($scope, $uibModalInstance) {
 							$scope.data = {
 								found    : result.emaillist.found,

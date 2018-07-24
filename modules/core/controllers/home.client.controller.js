@@ -1,3 +1,5 @@
+import '../../../public/less/theme.less';
+
 (function () {
   'use strict';
 

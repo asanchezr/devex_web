@@ -27,7 +27,7 @@
 		// -------------------------------------------------------------------------
 		.state('projects.list', {
 			url: '',
-			templateUrl: '/modules/projects/client/views/list-projects.client.view.html',
+			templateUrl: '/modules/projects/views/list-projects.client.view.html',
 			data: {
 				pageTitle: 'Projects List'
 			},
@@ -52,7 +52,7 @@
 			params: {
 				programId: null
 			},
-			templateUrl: '/modules/projects/client/views/view-project.client.view.html',
+			templateUrl: '/modules/projects/views/view-project.client.view.html',
 			controller: 'ProjectViewController',
 			controllerAs: 'vm',
 			resolve: {
@@ -90,7 +90,7 @@
 			params: {
 				context: null
 			},
-			templateUrl: '/modules/projects/client/views/edit-project.client.view.html',
+			templateUrl: '/modules/projects/views/edit-project.client.view.html',
 			controller: 'ProjectEditController',
 			controllerAs: 'vm',
 			resolve: {
@@ -132,7 +132,7 @@
 				programTitle: null,
 				context: null
 			},
-			templateUrl: '/modules/projects/client/views/edit-project.client.view.html',
+			templateUrl: '/modules/projects/views/edit-project.client.view.html',
 			controller: 'ProjectEditController',
 			controllerAs: 'vm',
 			resolve: {

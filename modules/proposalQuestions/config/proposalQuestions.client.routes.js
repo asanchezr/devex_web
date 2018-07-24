@@ -27,7 +27,7 @@
 		// -------------------------------------------------------------------------
 		.state ('proposalQuestions.list', {
 			url          : '',
-			templateUrl  : '/modules/proposalQuestions/client/views/list-proposalQuestions.client.view.html',
+			templateUrl  : '/modules/proposalQuestions/views/list-proposalQuestions.client.view.html',
 			controller   : 'PropsalQuestionsListController',
 			controllerAs : 'vm',
 			resolve: {
@@ -46,7 +46,7 @@
 		// -------------------------------------------------------------------------
 		.state ('proposalQuestions.view', {
 			url          : '/:propsalQuestionId',
-			templateUrl  : '/modules/proposalQuestions/client/views/view-propsalQuestion.client.view.html',
+			templateUrl  : '/modules/proposalQuestions/views/view-propsalQuestion.client.view.html',
 			controller   : 'PropsalQuestionViewController',
 			controllerAs : 'vm',
 			resolve: {
@@ -77,7 +77,7 @@
 		// -------------------------------------------------------------------------
 		.state ('propsalQuestionadmin.edit', {
 			url          : '/:propsalQuestionId/edit',
-			templateUrl  : '/modules/proposalQuestions/client/views/edit-propsalQuestion.client.view.html',
+			templateUrl  : '/modules/proposalQuestions/views/edit-propsalQuestion.client.view.html',
 			controller   : 'PropsalQuestionEditController',
 			controllerAs : 'qqq',
 			resolve: {
@@ -100,7 +100,7 @@
 		// -------------------------------------------------------------------------
 		.state ('propsalQuestionadmin.create', {
 			url          : '/create',
-			templateUrl  : '/modules/proposalQuestions/client/views/edit-propsalQuestion.client.view.html',
+			templateUrl  : '/modules/proposalQuestions/views/edit-propsalQuestion.client.view.html',
 			controller   : 'PropsalQuestionEditController',
 			controllerAs : 'qqq',
 			resolve: {

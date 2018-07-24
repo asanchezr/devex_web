@@ -32,7 +32,7 @@
 		// -------------------------------------------------------------------------
 		.state('opportunities.list', {
 			url: '',
-			templateUrl: '/modules/opportunities/client/views/opportunity-list.html',
+			templateUrl: '/modules/opportunities/views/opportunity-list.html',
 			data: {
 				pageTitle: 'Opportunities List'
 			},
@@ -58,7 +58,7 @@
 				programId: null,
 				projectId: null
 			},
-			templateUrl: '/modules/opportunities/client/views/cwu-opportunity-view.html',
+			templateUrl: '/modules/opportunities/views/cwu-opportunity-view.html',
 			controller: 'OpportunityViewController',
 			controllerAs: 'vm',
 			resolve: {
@@ -93,7 +93,7 @@
 				programId: null,
 				projectId: null
 			},
-			templateUrl: '/modules/opportunities/client/views/swu-opportunity-view.html',
+			templateUrl: '/modules/opportunities/views/swu-opportunity-view.html',
 			controller: 'OpportunityViewSWUController',
 			controllerAs: 'vm',
 			resolve: {
@@ -152,7 +152,7 @@
 				programId: null,
 				projectId: null
 			},
-			templateUrl: '/modules/opportunities/client/views/cwu-opportunity-edit.html',
+			templateUrl: '/modules/opportunities/views/cwu-opportunity-edit.html',
 			controller: 'OpportunityEditController',
 			controllerAs: 'vm',
 			resolve: {
@@ -189,7 +189,7 @@
 				programId: null,
 				projectId: null
 			},
-			templateUrl: '/modules/opportunities/client/views/swu-opportunity-edit.html',
+			templateUrl: '/modules/opportunities/views/swu-opportunity-edit.html',
 			controller: 'OpportunityEditSWUController',
 			controllerAs: 'vm',
 			resolve: {
@@ -229,7 +229,7 @@
 				projectTitle : null,
 				context      : null
 			},
-			templateUrl: '/modules/opportunities/client/views/opportunity-create.html',
+			templateUrl: '/modules/opportunities/views/opportunity-create.html',
 			controller: 'OpportunityLandingController',
 			controllerAs: 'vm',
 			resolve: {
@@ -264,7 +264,7 @@
 				projectTitle: null,
 				context: null
 			},
-			templateUrl: '/modules/opportunities/client/views/cwu-opportunity-edit.html',
+			templateUrl: '/modules/opportunities/views/cwu-opportunity-edit.html',
 			controller: 'OpportunityEditController',
 			controllerAs: 'vm',
 			resolve: {
@@ -299,7 +299,7 @@
 				projectTitle: null,
 				context: null
 			},
-			templateUrl: '/modules/opportunities/client/views/swu-opportunity-edit.html',
+			templateUrl: '/modules/opportunities/views/swu-opportunity-edit.html',
 			controller: 'OpportunityEditSWUController',
 			controllerAs: 'vm',
 			resolve: {

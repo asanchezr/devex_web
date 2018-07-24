@@ -13,7 +13,7 @@
 			scope        : {
 				orgs: '='
 			},
-			templateUrl  : '/modules/orgs/client/views/list.orgs.directive.html',
+			templateUrl  : '/modules/orgs/views/list.orgs.directive.html',
 			controller   : ['$scope', '$sce', 'OrgsService', 'Authentication', function ($scope, $sce, OrgsService, Authentication) {
 				var vm = this;
 				var isUser = Authentication.user;
@@ -34,24 +34,28 @@
 
 						vm.userCanAdd = isUser && !alreadyHasCompanies && (isAdmin || !isGov);
 						vm.trust = $sce.trustAsHtml;
-						$scope.orgs.forEach (function (org) {
+						orgs.forEach (function (org) {
 							org.isOrgAdmin      = org.admins.map (function (u) { return (uid === u._id); }).reduce (function (accum, curr) {return (accum || curr);}, false);
 							org.isOrgMember     = org.members.map (function (u) { return (uid === u._id); }).reduce (function (accum, curr) {return (accum || curr);}, false);
 							org.isOrgOwner      = org.owner && (uid === org.owner._id);
 							org.canEdit         = vm.isAdmin || org.isOrgOwner || org.isOrgAdmin;
+							org.orgImageURL = window.apiurl + '/' + org.orgImageURL;
 						});
-						vm.orgs = $scope.orgs;
+						vm.orgs = orgs;
 					});
 				}
 				else {
 					OrgsService.list().$promise.then(function (orgs) {
+						orgs.forEach(org => {
+							org.orgImageURL = window.apiUrl + '/' + org.orgImageURL;
+						});
 						vm.userCanAdd = false;
 						vm.trust = $sce.trustAsHtml;
-						vm.orgs = $scope.orgs;
-					})
+						vm.orgs = orgs;
+					});
 				}
 			}]
-		}
+		};
 	})
 	// -------------------------------------------------------------------------
 	//
@@ -71,11 +75,11 @@
 			controller: ['$scope', '$uibModal', function ($scope, $uibModal) {
 				var wsx = this;
 				wsx.org = $scope.org;
-				var uploadurl = '/api/upload/logo/org/' + wsx.org._id
+				var uploadurl = '/api/upload/logo/org/' + wsx.org._id;
 				wsx.edit = function () {
 					$uibModal.open ({
 						size: 'lg',
-						templateUrl: '/modules/orgs/client/views/change-logo-modal.html',
+						templateUrl: '/modules/orgs/views/change-logo-modal.html',
 						controllerAs: 'qqq',
 						bindToController: true,
 						resolve: {
@@ -152,12 +156,12 @@
 									Notification.error({ message: response.message, title: '<i class="glyphicon glyphicon-remove"></i> Change profile picture failed!' });
 								}
 
-								qqq.quitnow = function () { $uibModalInstance.close(false); }
+								qqq.quitnow = function () { $uibModalInstance.close(false); };
 							}
 						]
 					})
 					;
-				}
+				};
 			}]
 		};
 	})

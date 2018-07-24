@@ -26,7 +26,7 @@
 		// -------------------------------------------------------------------------
 		.state ('orgs.create', {
 			url: '/create',
-			templateUrl: '/modules/orgs/client/views/org-add.html',
+			templateUrl: '/modules/orgs/views/org-add.html',
 			controller: 'OrgCreateController',
 			controllerAs: 'vm',
 			resolve: {
@@ -43,7 +43,7 @@
 		// -------------------------------------------------------------------------
 		.state('orgs.list', {
 			url: '',
-			templateUrl: '/modules/orgs/client/views/list-orgs.client.view.html',
+			templateUrl: '/modules/orgs/views/list-orgs.client.view.html',
 			data: {
 				pageTitle: 'Orgs List'
 			},
@@ -65,7 +65,7 @@
 		// -------------------------------------------------------------------------
 		.state('orgs.view', {
 			url: '/:orgId',
-			templateUrl: '/modules/orgs/client/views/org-view.html',
+			templateUrl: '/modules/orgs/views/org-view.html',
 			controller: 'OrgViewController',
 			controllerAs: 'vm',
 			resolve: {
@@ -87,7 +87,7 @@
 		.state('orgadmin', {
 			abstract: true,
 			url: '/orgadmin/:orgId',
-			templateUrl: '/modules/orgs/client/views/org-edit.html',
+			templateUrl: '/modules/orgs/views/org-edit.html',
 			controller: 'OrgAdminController',
 			controllerAs: 'vm',
 			resolve: {
@@ -106,7 +106,7 @@
 		})
 		.state('orgadmin.profile', {
 			url: '/main',
-			templateUrl: '/modules/orgs/client/views/org-main.html',
+			templateUrl: '/modules/orgs/views/org-main.html',
 			controller: 'OrgProfileController',
 			controllerAs: 'vm',
 			data: {
@@ -125,7 +125,7 @@
 		})
 		.state ('orgadmin.members', {
 			url: '/members',
-			templateUrl: '/modules/orgs/client/views/org-members.html',
+			templateUrl: '/modules/orgs/views/org-members.html',
 			controller: 'OrgMembersController',
 			controllerAs: 'vm',
 			data: {
@@ -144,7 +144,7 @@
 		})
 		.state ('orgadmin.terms', {
 			url: '/terms',
-			templateUrl: '/modules/orgs/client/views/org-terms.html',
+			templateUrl: '/modules/orgs/views/org-terms.html',
 			controller: 'OrgTermsController',
 			controllerAs: 'vm',
 			data: {
