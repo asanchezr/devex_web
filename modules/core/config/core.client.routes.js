@@ -42,9 +42,9 @@
 				controller: 'ErrorController',
 				controllerAs: 'vm',
 				params: {
-					message: function($stateParams) {
+					message: ['$stateParams', function($stateParams) {
 						return $stateParams.message;
-					}
+					}]
 				},
 				data: {
 					ignoreState: true,
@@ -60,9 +60,9 @@
 				controller: 'ErrorController',
 				controllerAs: 'vm',
 				params: {
-					message: function($stateParams) {
+					message: ['$stateParams', function($stateParams) {
 						return $stateParams.message;
-					}
+					}]
 				},
 				data: {
 					ignoreState: true,
@@ -186,10 +186,10 @@
 			})
 			.state('template', {
 				url: '/template/:templateId',
-				templateUrl: function ($stateParams) {
+				templateUrl: ['$stateParams', function ($stateParams) {
 					var id = $stateParams.templateId;
 					return '/modules/core/views/templates/template-'+id+'.html';
-				},
+				}],
 				data: {
 					ignoreState: true,
 					pageTitle: 'Template'

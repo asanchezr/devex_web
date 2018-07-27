@@ -37,9 +37,9 @@
 			template : '<button type="button" class="btn btn-sm btn-default" ng-click="wsx.edit()">Upload new picture</button>',
 			controller: ['$scope', '$uibModal', function ($scope, $uibModal) {
 				var wsx = this;
-				var uploadurl = '/api/users/picture';
+				var uploadurl = window.apiUrl + '/api/users/picture';
 				if ($scope.org) {
-					uploadurl = '/api/upload/logo/org/'+$scope.org._id
+					uploadurl = window.apiUrl + '/api/upload/logo/org/' + $scope.org._id;
 				}
 				wsx.edit = function () {
 					$uibModal.open ({
@@ -107,11 +107,11 @@
 								Notification.error({ message: response.message, title: '<i class="glyphicon glyphicon-remove"></i> Change profile picture failed!' });
 							}
 
-							qqq.quitnow = function () { $uibModalInstance.close(false); }
+							qqq.quitnow = function () { $uibModalInstance.close(false); };
 						}]
 					})
 					;
-				}
+				};
 			}]
 		};
 	})

@@ -97,7 +97,7 @@
 					vm.filterOpen = function(r) {
 						var d = new Date (r.deadline);
 						return vm.rightNow <= d;
-					}
+					};
 					vm.filterClosed = function(r) {
 						var d = new Date (r.deadline);
 						return vm.rightNow > d;
@@ -106,7 +106,7 @@
 						return vm.opportunities.filter(function(opportunity) {
 							return vm.rightNow <= new Date(opportunity.deadline);
 						}).length;
-					}
+					};
 					/**
 					 * Returns the total value of all closed opportunities.
 					 * Sums up earnings for CWU and budget for SWU
@@ -152,7 +152,7 @@
 							//
 							// success, notify
 							//
-							var m = state ? 'Your opportunity has been published and we\'ve notified subscribers!' : 'Your opportunity has been unpublished!'
+							var m = state ? 'Your opportunity has been published and we\'ve notified subscribers!' : 'Your opportunity has been unpublished!';
 							Notification.success ({
 								message : '<i class="glyphicon glyphicon-ok"></i> '+m
 							});
@@ -219,7 +219,7 @@
 					};
 				}
 			]
-		}
+		};
 	})
 	;
 }());

@@ -9,7 +9,7 @@
 	//
 	// -------------------------------------------------------------------------
 	.factory('OpportunitiesService', ['$resource', '$log', function ($resource, $log) {
-		var Opportunity = $resource('/api/opportunities/:opportunityId', {
+		var Opportunity = $resource(window.apiUrl + '/api/opportunities/:opportunityId', {
 			opportunityId: '@_id'
 		}, {
 			update: {
@@ -46,61 +46,61 @@
 			},
 			forProject: {
 				method: 'GET',
-				url: '/api/opportunities/for/project/:projectId',
+				url: window.apiUrl + '/api/opportunities/for/project/:projectId',
 				isArray: true
 			},
 			forProgram: {
 				method: 'GET',
-				url: '/api/opportunities/for/program/:programId',
+				url: window.apiUrl + '/api/opportunities/for/program/:programId',
 				isArray: true
 			},
 			my: {
 				method: 'GET',
-				url: '/api/my/opportunities',
+				url: window.apiUrl + '/api/my/opportunities',
 				isArray: true
 			},
 			publish: {
 				method: 'GET',
-				url :'/api/opportunities/publish/:opportunityId'
+				url : window.apiUrl + '/api/opportunities/publish/:opportunityId'
 			},
 			unpublish: {
 				method: 'DELETE',
-				url :'/api/opportunities/publish/:opportunityId'
+				url : window.apiUrl + '/api/opportunities/publish/:opportunityId'
 			},
 			unassign: {
 				method: 'PUT',
-				url: '/api/opportunities/unassign/:opportunityId',
+				url: window.apiUrl + '/api/opportunities/unassign/:opportunityId',
 				params: {opportunityId:'@opportunityId'}
 			},
 			makeRequest: {
 				method: 'GET',
-				url :'/api/request/opportunity/:opportunityId'
+				url : window.apiUrl + '/api/request/opportunity/:opportunityId'
 			},
 			getRequests: {
 				method: 'GET',
-				url :'/api/opportunities/requests/:opportunityId',
+				url : window.apiUrl + '/api/opportunities/requests/:opportunityId',
 				isArray: true
 			},
 			getMembers: {
 				method: 'GET',
-				url :'/api/opportunities/members/:opportunityId',
+				url : window.apiUrl + '/api/opportunities/members/:opportunityId',
 				isArray: true
 			},
 			confirmMember: {
 				method: 'GET',
-				url : '/api/opportunities/requests/confirm/:opportunityId/:userId'
+				url : window.apiUrl + '/api/opportunities/requests/confirm/:opportunityId/:userId'
 			},
 			denyMember: {
 				method: 'GET',
-				url : '/api/opportunities/requests/deny/:opportunityId/:userId'
+				url : window.apiUrl + '/api/opportunities/requests/deny/:opportunityId/:userId'
 			},
 			addWatch: {
 				method: 'GET',
-				url : '/api/opportunities/watch/add/:opportunityId'
+				url : window.apiUrl + '/api/opportunities/watch/add/:opportunityId'
 			},
 			removeWatch: {
 				method: 'GET',
-				url : '/api/opportunities/watch/remove/:opportunityId'
+				url : window.apiUrl + '/api/opportunities/watch/remove/:opportunityId'
 			}
 		});
 		angular.extend (Opportunity.prototype, {
@@ -176,7 +176,7 @@
 						implementation : {},
 						inception : {},
 						proto : {}
-					}
+					};
 				}
 				var fields = {
 					common: [
@@ -298,8 +298,7 @@
 				// vm.errorFields = OpportunitiesCommon.publishStatus (vm.opportunity);
 				vm.canPublish = (vm.errorFields.length === 0);
 			}
-
-		}
+		};
 	}])
 	;
 }());

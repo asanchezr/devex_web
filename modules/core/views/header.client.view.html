@@ -63,7 +63,7 @@
 			<!--<ul class="nav navbar-nav navbar-right" ng-show="vm.authentication.user">-->
 				<li  ng-cloak class="dropdown" uib-dropdown>
 					<a class="dropdown-toggle user-header-dropdown-toggle" uib-dropdown-toggle role="button">
-						<img ng-src="{{vm.authentication.user.profileImageURL}}" alt="{{vm.authentication.user.displayName}}" class="header-profile-image" />
+						<img ng-src="{{vm.userProfileImgURL}}" alt="{{vm.authentication.user.displayName}}" class="header-profile-image" />
 						<!-- Hide the name for now -->
 						<!--<span class="hidden-sm hidden-md hidden-lg hidden-xl" ng-bind="vm.authentication.user.displayName"></span>-->
 					</a>
@@ -75,7 +75,7 @@
 						</li>
 						<li class="divider"></li>
 						<li>
-							<a href="/api/auth/signout" target="_self">Sign Out</a>
+							<a href="" ng-click="vm.signout()" target="_self">Sign Out</a>
 						</li>
 					</ul>
 				</li>

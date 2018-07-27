@@ -5,6 +5,7 @@
 // =========================================================================
 (function () {
 	'use strict';
+
 	var formatDate = function (d) {
 		var monthNames = [
 		'January', 'February', 'March',
@@ -15,8 +16,8 @@
 		var day = d.getDate();
 		var monthIndex = d.getMonth();
 		var year = d.getFullYear();
-		return monthNames[monthIndex] + ' ' + day + ', '+ year;
-	}
+		return monthNames[monthIndex] + ' ' + day + ', ' + year;
+	};
 
 	angular.module('opportunities')
 	// =========================================================================
@@ -167,7 +168,7 @@
 					opportunityId: opportunity._id
 				}).$promise.then (function () {
 					Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Successfully Applied!' });
-				})
+				});
 			};
 			// -------------------------------------------------------------------------
 			//
@@ -187,7 +188,7 @@
 			};
 			vm.beforeStage = function (stage) {
 				return vm.opportunity.evaluationStage < vm.stages[stage];
-			}
+			};
 			vm.pastStage = function (stage) {
 				return vm.opportunity.evaluationStage > vm.stages[stage];
 			};
@@ -208,7 +209,7 @@
 					return vm.proposals[0];
 				}
 				return null;
-			}
+			};
 			// -------------------------------------------------------------------------
 			//
 			// Evaluate question rankings or calculate skill points
@@ -232,7 +233,7 @@
 						vm.responses[questionIndex] = [];
 						vm.proposals.forEach (function (proposal) {
 							if (vm.opportunity.evaluationStage === vm.stages.pending_review || !proposal.questions[questionIndex].rejected) {
-								vm.responses[questionIndex].push (proposal.questions[questionIndex])
+								vm.responses[questionIndex].push (proposal.questions[questionIndex]);
 							}
 						});
 					}
@@ -309,8 +310,8 @@
 							proposal.screenedIn = false;
 							proposal.questions.forEach(function(question) {
 								question['rejected'] = false;
-							})
-						})
+							});
+						});
 						vm.totalAndSort();
 						vm.saveProposals();
 						vm.saveOpportunity();
@@ -327,7 +328,7 @@
 						vm.saveOpportunity();
 					}
 				});
-			}
+			};
 			// -------------------------------------------------------------------------
 			//
 			// Questions Modal
@@ -360,10 +361,10 @@
 								return a.rank - b.rank;
 							});
 							$scope.data.model.questions[respArray[0].question] = respArray;
-						})
+						});
 						$scope.pageChanged = function() {
 							$scope.data.model.selected = null;
-						}
+						};
 
 						$scope.close = function () {
 							$uibModalInstance.close({});
@@ -412,8 +413,8 @@
 							if (match) {
 								question.rank = resp.questions[question.question].indexOf(match) + 1;
 							}
-						})
-					})
+						});
+					});
 
 					if (resp.action === 'save') {
 						vm.saveProposals ();
@@ -444,7 +445,7 @@
 				vm.proposals.sort(function(a, b) {
 					return b.scores.total - a.scores.total;
 				});
-			}
+			};
 			// -------------------------------------------------------------------------
 			//
 			// Calculates rankings so that top 4 companies can be screened in - assumes the proposal are already sorted by current score
@@ -462,8 +463,8 @@
 					proposal.ranking = (proposal.scores.total === prevScore) ? currentRanking -1 : currentRanking;
 					prevScore = proposal.scores.total;
 					proposal.ranking > 4 ? proposal.screenedIn = false : proposal.screenedIn = true;
-				})
-			}
+				});
+			};
 			// -------------------------------------------------------------------------
 			//
 			// Code Challenge Modal
@@ -478,9 +479,9 @@
 						$scope.data.proposalScores = [];
 						vm.proposals.forEach(function(proposal) {
 							if (proposal.screenedIn) {
-								$scope.data.proposalScores.push({ businessName: proposal.businessName, score: null })
+								$scope.data.proposalScores.push({ businessName: proposal.businessName, score: null });
 							}
-						})
+						});
 						$scope.cancel = function () {
 							$uibModalInstance.close ({});
 						};
@@ -517,9 +518,9 @@
 						});
 
 						// if we have scored all proposal for the code challenge stage, and at least 1 company passed, move on
-						if (scoreCount === vm.proposals.filter(function(proposal) { return proposal.screenedIn}).length) {
+						if (scoreCount === vm.proposals.filter(function(proposal) { return proposal.screenedIn; }).length) {
 							if (passCount > 0) {
-								vm.opportunity.evaluationStage = vm.stages.interview
+								vm.opportunity.evaluationStage = vm.stages.interview;
 							}
 							else {
 								vm.opportunity.evaluationStage = vm.stages.all_fail;
@@ -547,10 +548,10 @@
 						$scope.data.proposal = proposal;
 						$scope.close = function() {
 							$uibModalInstance.close({});
-						}
+						};
 					}]
-				})
-			}
+				});
+			};
 			// -------------------------------------------------------------------------
 			//
 			// Question vetting ranking helper function
@@ -570,10 +571,10 @@
 							else if (rejResponse.rank < response.rank) {
 								response.rank -= 1;
 							}
-						})
+						});
 					});
 				});
-			}
+			};
 			// -------------------------------------------------------------------------
 			//
 			// Question vetting modal
@@ -614,7 +615,7 @@
 
 						$scope.getWordCount = function (response) {
 							return response.split(' ').length;
-						}
+						};
 					}]
 				})
 				.then(function (resp) {
@@ -632,7 +633,7 @@
 						buildQuestionPivot();
 					}
 				});
-			}
+			};
 			// -------------------------------------------------------------------------
 			//
 			// Interview Modal
@@ -647,9 +648,9 @@
 						$scope.data.proposalScores = [];
 						vm.proposals.forEach(function(proposal) {
 							if (proposal.screenedIn && proposal.passedCodeChallenge) {
-								$scope.data.proposalScores.push({ businessName: proposal.businessName, score: null })
+								$scope.data.proposalScores.push({ businessName: proposal.businessName, score: null });
 							}
-						})
+						});
 						$scope.cancel = function () {
 							$uibModalInstance.close ({});
 						};
@@ -757,18 +758,18 @@
 				var lowestBidder;
 				var passedProposals = vm.proposals.filter(function(proposal) {
 					return proposal.screenedIn && proposal.passedCodeChallenge;
-				})
+				});
 
 				passedProposals.forEach(function(proposal) {
 					proposal.cost = proposal.phases.inception.cost + proposal.phases.proto.cost + proposal.phases.implementation.cost;
 					if (lowestBidder === undefined || proposal.cost < lowestBidder.cost) {
 						lowestBidder = proposal;
 					}
-				})
+				});
 
 				passedProposals.forEach(function(proposal) {
 					proposal.scores.price = Math.round((lowestBidder.cost/proposal.cost) * (vm.weights.price * vm.maxPoints) * 100) / 100;
-				})
+				});
 			};
 
 			vm.assign = function (proposal) {
@@ -803,7 +804,7 @@
 				var publishedState  = opportunity.isPublished;
 				var publishError    = 'Error ' + (isToBePublished ? 'Publishing' : 'Unpublishing');
 				var publishQuestion = 'When you publish this opportunity, we\'ll notify all our subscribed users. Are you sure you\'ve got it just the way you want it?';
-				var publishSuccess  = isToBePublished ? 'Your opportunity has been published and we\'ve notified subscribers!' : 'Your opportunity has been unpublished!'
+				var publishSuccess  = isToBePublished ? 'Your opportunity has been published and we\'ve notified subscribers!' : 'Your opportunity has been unpublished!';
 				var publishMethod   = isToBePublished ? OpportunitiesService.publish : OpportunitiesService.unpublish;
 				var isToBeSaved     = true;
 				var promise = Promise.resolve ();
@@ -916,7 +917,7 @@
 					implementation : {},
 					inception : {},
 					proto : {}
-				}
+				};
 			}
 			vm.oimp                   = vm.opportunity.phases.implementation;
 			vm.oinp                   = vm.opportunity.phases.inception;
@@ -1223,7 +1224,7 @@
 				var savemeSeymour = true;
 				var promise = Promise.resolve ();
 				if (!originalPublishedState && vm.opportunity.isPublished) {
-					var question = 'You are publishing this opportunity. This will also notify all subscribed users.  Do you wish to continue?'
+					var question = 'You are publishing this opportunity. This will also notify all subscribed users.  Do you wish to continue?';
 					promise = ask.yesNo (question).then (function (result) {
 						savemeSeymour = result;
 					});
@@ -1231,7 +1232,7 @@
 				//
 				// update target total
 				//
-				vm.opportunity.totalTarget = vm.opportunity.implementationTarget + vm.opportunity.prototypeTarget + vm.opportunity.inceptionTarget
+				vm.opportunity.totalTarget = vm.opportunity.implementationTarget + vm.opportunity.prototypeTarget + vm.opportunity.inceptionTarget;
 				//
 				// Create a new opportunity, or update the current instance
 				//

@@ -12,7 +12,9 @@ const path				= require('path');
 const _					= require('lodash');
 const methodOverride 	= require('method-override');
 const cookieParser		= require('cookie-parser');
+const validator			= require('validator');
 const config			= require('./config/env/config');
+const request			= require ('request');
 
 /**
  * Configure a morgan token for the userid.

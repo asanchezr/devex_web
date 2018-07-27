@@ -16,6 +16,10 @@
     vm.isCollapsed = false;
     vm.menu = menuService.getMenu('topbar');
 
+    if (vm.authentication.user) {
+      vm.userProfileImgURL = window.apiUrl + '/' + Authentication.user.profileImageURL;
+    }
+
     $scope.$on('$stateChangeSuccess', stateChangeSuccess);
     $scope.isHomePage = function() {
         var path = $location.path();
@@ -84,6 +88,12 @@
       // Collapsing the menu after navigation
       vm.isCollapsed = false;
     }
+
+    vm.signout = function() {
+      window.user = null;
+      sessionStorage.removeItem('user');
+      window.location.href = '/';
+    };
   }
 
   WarningModalController.$inject = ['$scope', 'Idle'];
@@ -94,12 +104,12 @@
 
     qqq.getCountdownInMinutes = function () {
       return Math.floor(qqq.countdown / 60);
-    }
+    };
 
     $scope.$on('IdleWarn', function(e, countdown) {
       $scope.$apply(function() {
         qqq.countdown = countdown;
-      })
+      });
     });
   }
 
@@ -107,7 +117,7 @@
     var qqq = this;
     // inform user and provide option to sign back in
     qqq.handleClickOK = function() {
-      window.location.href = '/authentication/signin'
-    }
+      window.location.href = '/authentication/signin';
+    };
   }
 }());

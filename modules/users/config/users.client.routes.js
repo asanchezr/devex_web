@@ -88,7 +88,7 @@
 				controllerAs: 'vm',
 				resolve: {
 					usercount: ['UsersService', function (UsersService) {
-						return UsersService.countUsers ().then (function (o) {return o.count});
+						return UsersService.countUsers ().then (function (o) { return o.count; });
 					}]
 				}
 			})

@@ -131,7 +131,7 @@
 					opportunityId: opportunity._id
 				}).$promise.then (function () {
 					Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Successfully Applied!' });
-				})
+				});
 			};
 			// -------------------------------------------------------------------------
 			//
@@ -185,13 +185,9 @@
 					for (questionIndex=0; questionIndex<vm.opportunity.questions.length; questionIndex++) {
 						vm.responses[questionIndex] = [];
 						vm.proposals.forEach (function (p) {
-							vm.responses[questionIndex].push (p.questions[questionIndex])
+							vm.responses[questionIndex].push (p.questions[questionIndex]);
 						});
 					}
-					vm.responses.forEach (function (q) {
-						q.forEach (function (r) {
-						})
-					})
 					//
 					// if we have not yet begun evaluating do some question order randomizing
 					//
@@ -276,7 +272,7 @@
 						};
 						$scope.commit = function () {
 							$uibModalInstance.close('commit');
-						}
+						};
 					}]
 				}, {
 				})
@@ -322,7 +318,7 @@
 								action : 'commit',
 								score  : $scope.data.score
 							});
-						}
+						};
 					}]
 				}, {
 				})
@@ -376,7 +372,7 @@
 				var publishedState  = opportunity.isPublished;
 				var publishError    = 'Error ' + (isToBePublished ? 'Publishing' : 'Unpublishing');
 				var publishQuestion = 'When you publish this opportunity, we\'ll notify all our subscribed users. Are you sure you\'ve got it just the way you want it?';
-				var publishSuccess  = isToBePublished ? 'Your opportunity has been published and we\'ve notified subscribers!' : 'Your opportunity has been unpublished!'
+				var publishSuccess  = isToBePublished ? 'Your opportunity has been published and we\'ve notified subscribers!' : 'Your opportunity has been unpublished!';
 				var publishMethod   = isToBePublished ? OpportunitiesService.publish : OpportunitiesService.unpublish;
 				var isToBeSaved     = true;
 				var promise = Promise.resolve ();
@@ -681,7 +677,7 @@
 				var savemeSeymour = true;
 				var promise = Promise.resolve ();
 				if (!originalPublishedState && vm.opportunity.isPublished) {
-					var question = 'You are publishing this opportunity. This will also notify all subscribed users.  Do you wish to continue?'
+					var question = 'You are publishing this opportunity. This will also notify all subscribed users.  Do you wish to continue?';
 					promise = ask.yesNo (question).then (function (result) {
 						savemeSeymour = result;
 					});
@@ -689,7 +685,7 @@
 				//
 				// update target total
 				//
-				vm.opportunity.totalTarget = vm.opportunity.implementationTarget + vm.opportunity.prototypeTarget + vm.opportunity.inceptionTarget
+				vm.opportunity.totalTarget = vm.opportunity.implementationTarget + vm.opportunity.prototypeTarget + vm.opportunity.inceptionTarget;
 				//
 				// Create a new opportunity, or update the current instance
 				//

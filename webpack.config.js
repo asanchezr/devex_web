@@ -39,7 +39,8 @@ module.exports = {
         filename: '[name].bundle.js'
     },
     resolve: {
-        mainFiles: ['index', 'compile/minified/ng-img-crop']
+        mainFiles: ['index', 'compile/minified/ng-img-crop'],
+        extensions: ['.webpack.js', '.web.js', '.js']
     },
     devtool: "source-map",
     optimization: {
@@ -84,6 +85,12 @@ module.exports = {
                 loader: 'file-loader'
             }
         ]
+    },
+    node: {
+        console: true,
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty'
     },
     plugins: [
         new webpack.ProvidePlugin({

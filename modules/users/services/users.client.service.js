@@ -9,48 +9,48 @@
   UsersService.$inject = ['$resource', '$window', 'Authentication'];
 
   function UsersService($resource, $window, Authentication) {
-    var Users = $resource('/api/users', {}, {
+    var Users = $resource(window.apiUrl + '/api/users', {}, {
       update: {
         method: 'PUT'
       },
       updatePassword: {
         method: 'POST',
-        url: '/api/users/password'
+        url: window.apiUrl + '/api/users/password'
       },
       deleteProvider: {
         method: 'DELETE',
-        url: '/api/users/accounts',
+        url: window.apiUrl + '/api/users/accounts',
         params: {
           provider: '@provider'
         }
       },
       self: {
         method: 'GET',
-        url: '/api/users/me'
+        url: window.apiUrl + '/api/users/me'
       },
       removeSelf: {
         method: 'DELETE',
-        url: '/api/users/delete'
+        url: window.apiUrl + '/api/users/delete'
       },
       sendPasswordResetToken: {
         method: 'POST',
-        url: '/api/auth/forgot'
+        url: window.apiUrl + '/api/auth/forgot'
       },
       resetPasswordWithToken: {
         method: 'POST',
-        url: '/api/auth/reset/:token'
+        url: window.apiUrl + '/api/auth/reset/:token'
       },
       signup: {
         method: 'POST',
-        url: '/api/auth/signup'
+        url: window.apiUrl + '/api/auth/signup'
       },
       signin: {
         method: 'POST',
-        url: '/api/auth/signin'
+        url: window.apiUrl + '/api/auth/signin'
       },
       numUsers: {
         method: 'GET',
-        url: '/api/users/count'
+        url: window.apiUrl + '/api/users/count'
       }
     });
 
@@ -102,7 +102,7 @@
     }, {
        approve: {
         method: 'POST',
-        url: '/api/approve',
+        url: window.apiUrl + '/api/approve',
         params: {
           flag: '@flag',
           userId:'@userId'
@@ -110,12 +110,12 @@
       },
       listopps: {
         method: 'GET',
-        url: '/api/listopps',
+        url: window.apiUrl + '/api/listopps',
         isArray: true
       },
       listmeets: {
         method: 'GET',
-        url: '/api/listmeets',
+        url: window.apiUrl + '/api/listmeets',
         isArray: true
       },
       update: {
