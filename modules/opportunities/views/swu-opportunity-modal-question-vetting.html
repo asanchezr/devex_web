@@ -19,7 +19,7 @@
 				<div class="panel-heading text-center">
 					{{qindex=$index;""}}
 					<strong>
-						Question: {{question}}
+						Question: <span ng-bind-html="question.question"></span>
 					</strong>
 				</div>
 				<ul class="list-group">
@@ -28,10 +28,9 @@
 						<div class="row">
 							<div align="right">
 								Reject <input type="checkbox" ng-model="response.rejected"><br/>
-								Word count: {{getWordCount(response.response)}}
+								<!-- Word count: {{getWordCount(response.response)}} -->
 							</div>
-							<div align="left" class="col-sm-9" ng-class="{rejected: response.rejected}">
-								{{response.response}}
+							<div align="left" class="col-sm-9" ng-class="{rejected: response.rejected}" ng-bind-html="response.response">
 							</div>
 						</div>
 					</li>
@@ -41,8 +40,7 @@
 	</div>
 </div>
 <div class="modal-footer text-right">
-	<button class="btn btn-primary" data-ng-click="ok()">Save</button>
+	<button class="btn btn-primary" data-ng-click="save()">Save</button>
 	<button class="btn btn-success" data-ng-click="commit()"><i class="fa fa-thumbs-o-up"></i> Commit</button>
-	<button class="btn btn-default" data-ng-click="close()">Cancel</button>
+	<button class="btn btn-default" data-ng-click="cancel()">Cancel</button>
 </div>
-	

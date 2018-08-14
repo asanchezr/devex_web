@@ -20,7 +20,7 @@
 			template: '<ui-view autoscroll="true"></ui-view>',
 			resolve: {
 				capabilities: ['CapabilitiesService', function (CapabilitiesService) {
-					return CapabilitiesService.query ();
+					return CapabilitiesService.query().$promise;
 				}]
 			}
 		})
@@ -137,7 +137,7 @@
 			template: '<ui-view autoscroll="true"></ui-view>',
 			resolve: {
 				capabilities: ['CapabilitiesService', function (CapabilitiesService) {
-					return CapabilitiesService.query ();
+					return CapabilitiesService.query().$promise;
 				}]
 			}
 		})
