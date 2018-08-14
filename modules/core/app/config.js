@@ -91,7 +91,7 @@ import validator from 'validator';
 
 	let user;
 	let userObj = sessionStorage.getItem('user');
-	if (userObj !== undefined) {
+	if (userObj) {
 		user = JSON.parse(userObj);
 	}
   	
