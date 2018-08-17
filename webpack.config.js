@@ -83,6 +83,14 @@ module.exports = {
             {
                 test: /\.(eot|ttf|wav|mp3)$/,
                 loader: 'file-loader'
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    { loader: MiniCssExtractPlugin.loader },
+                    { loader: 'css-loader' },
+                    { loader: 'sass-loader' }
+                ]
             }
         ]
     },

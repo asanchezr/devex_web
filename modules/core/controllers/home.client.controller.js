@@ -1,4 +1,5 @@
 import '../../../public/less/theme.less';
+import 'font-awesome/scss/font-awesome.scss';
 
 (function () {
   'use strict';
